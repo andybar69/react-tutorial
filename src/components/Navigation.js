@@ -15,10 +15,10 @@ class Navigation extends Component {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item">
-                            <NavLink to="/todo-list" className="nav-link">Todo List</NavLink>
+                            <NavLink to="/todo-list" className="nav-link">Todos List</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to="/contact-card" className="nav-link">Contact Card</NavLink>
+                            <NavLink to="/contact-cards-list" className="nav-link">Contacts</NavLink>
                         </li>
                     </ul>
                     <form className="form-inline my-2 my-lg-0">

@@ -3,7 +3,7 @@ import Navigation from './components/Navigation';
 import './App.css';
 import { Route, Switch } from 'react-router-dom';
 import TodoList from './components/TodoList';
-import ContactCard from './components/ContactCard';
+import ContactCardsList from './components/ContactCardsList';
 
 
 class App extends Component {
@@ -13,7 +13,7 @@ class App extends Component {
                 <Navigation />
                 <Switch>
                     <Route path="/todo-list" component={TodoList} />
-                    <Route path="/contact-card" component={ContactCard} />
+                    <Route path="/contact-cards-list" component={ContactCardsList} />
                 </Switch>
             </div>
         );

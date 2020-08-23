@@ -18,12 +18,15 @@ class Navigation extends Component {
                             <NavLink to="/todo-list" className="nav-link">Todos List</NavLink>
                         </li>
                         <li className="nav-item">
+                            <NavLink to="/travel-form" className="nav-link">Travel Form</NavLink>
+                        </li>
+                        <li className="nav-item">
                             <NavLink to="/contact-cards-list" className="nav-link">Contacts</NavLink>
                         </li>
                     </ul>
                     <form className="form-inline my-2 my-lg-0">
-                        <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                            <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        <NavLink to="/login" className="btn btn-outline-primary my-2 my-sm-0">Login</NavLink>
+                        <NavLink to="/signup" className="btn btn-outline-secondary my-2 my-sm-0" style={{marginLeft: "20px"}}>Sign Up</NavLink>
                     </form>
                 </div>
             </nav>

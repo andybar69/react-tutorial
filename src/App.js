@@ -8,6 +8,8 @@ import ContactCardsList from './components/ContactCardsList';
 import TravelForm from './components/TravelForm';
 import Post from './components/Post';
 import Login from './components/Login';
+import HomeState from './components/HomeState';
+import PostState from './components/PostState';
 
 
 class App extends Component {
@@ -16,11 +18,11 @@ class App extends Component {
             <div className="container-fluid">
                 <Navigation />
                 <Switch>
-                    <Route path="/" exact component={Home} />
+                    <Route path="/" exact component={HomeState} />
                     <Route path="/todo-list" component={TodoList} />
                     <Route path="/travel-form" component={TravelForm} />
                     <Route path="/contact-cards-list" component={ContactCardsList} />
-                    <Route path="/post/:id" component={Post} />
+                    <Route path="/post/:id" component={PostState} />
                     <Route path="/login" component={Login} />
                 </Switch>
             </div>

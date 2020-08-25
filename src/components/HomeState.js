@@ -8,7 +8,6 @@ class HomeState extends Component {
     }
 
     render() {
-        console.log(this.props);
         const { posts } = this.props;
         const postsList = posts.length ? (
                 posts.map(post => {
@@ -23,8 +22,8 @@ class HomeState extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        posts: state.posts
+        posts: state.postReducer.posts
     }
-}
+};
 
 export default connect(mapStateToProps)(HomeState);

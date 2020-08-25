@@ -14,6 +14,7 @@ class PostState extends Component {
     };
 
     render() {
+        console.log(this.props);
         const post = this.props.post
             ? (<div>
                 <h2>{this.props.post.title}</h2>
@@ -31,14 +32,13 @@ class PostState extends Component {
 const mapStateToProps = (state, ownProps) => {
     let id = ownProps.match.params.id;
     return {
-        post: state.posts.find((post) => {
+        post: state.postReducer.posts.find((post) => {
             return post.id == id
         })
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
-    console.log(dispatch);
     return {
         deletePost: (id) => { dispatch(deletePost(id)) }
     }

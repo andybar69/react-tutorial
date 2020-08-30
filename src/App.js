@@ -10,7 +10,7 @@ import Post from './components/Post';
 import Login from './components/Login';
 import HomeState from './components/HomeState';
 import PostState from './components/PostState';
-
+import Logout from './components/Logout';
 
 class App extends Component {
     render() {
@@ -24,6 +24,7 @@ class App extends Component {
                     <Route path="/contact-cards-list" component={ContactCardsList} />
                     <Route path="/post/:id" component={PostState} />
                     <Route path="/login" component={Login} />
+                    <Route path="/logout" component={Logout} />
                 </Switch>
             </div>
         );

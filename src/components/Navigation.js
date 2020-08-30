@@ -1,8 +1,29 @@
 import React, {Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import { connect } from "react-redux";
 
 class Navigation extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { 
+            location: ''
+        }
+    }
+    
+    componentDidMount() {
+        this.setState({
+            location: window.location.href
+        })
+    }
+
     render() {
+        console.log('nav ', this.props);
+        console.log('logged in: ', this.props.auth.status);
+        const authBlock = this.props.auth.status 
+        ? (<div><NavLink to="/logout" className="btn btn-outline-primary my-2 my-sm-0">Logout</NavLink></div>) 
+        : (<div><NavLink to={{pathname: '/login', state: {from: this.state.location }}} className="btn btn-outline-primary my-2 my-sm-0">Login</NavLink>
+        <NavLink to="/signup" className="btn btn-outline-secondary my-2 my-sm-0" style={{marginLeft: "20px"}}>Sign Up</NavLink></div>);
+        
         return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <NavLink to='/' className="navbar-brand">Home</NavLink>
@@ -25,8 +46,7 @@ class Navigation extends Component {
                         </li>
                     </ul>
                     <form className="form-inline my-2 my-lg-0">
-                        <NavLink to="/login" className="btn btn-outline-primary my-2 my-sm-0">Login</NavLink>
-                        <NavLink to="/signup" className="btn btn-outline-secondary my-2 my-sm-0" style={{marginLeft: "20px"}}>Sign Up</NavLink>
+                        {authBlock}
                     </form>
                 </div>
             </nav>
@@ -34,4 +54,10 @@ class Navigation extends Component {
     }
 }
 
-export default Navigation;
+const mapStateToProps = (state, ownProps) => {
+    return {
+        auth: state.authReducer.auth
+    }
+};
+
+export default connect(mapStateToProps)(Navigation);

@@ -6,3 +6,9 @@ export const loginUser = (firstName, lastName, status) => {
         status: status
     }
 };
+
+export const logoutUser = () => {
+    return {
+        type: "LOGOUT_USER"
+    }
+};

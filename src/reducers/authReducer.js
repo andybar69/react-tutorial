@@ -9,7 +9,32 @@ const initState = {
 
 const authReducer = (state = initState, action) => {
     console.log(action);
-    return state;
+    switch (action.type) {
+        case 'LOGIN_USER':
+            return {
+                ...state,
+                auth: {
+                    status: true,
+                    firstName: action.firstName,
+                    lastName: action.lastName
+                }
+            }
+            break;
+
+        case 'LOGOUT_USER':
+            return {
+                ...state,
+                auth: {
+                    status: false,
+                    firstName: '',
+                    lastName: ''
+                }
+            }
+            break;
+
+        default:
+            return state; break;
+    }
 };
 
 export default authReducer;
